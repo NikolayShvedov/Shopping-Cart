@@ -29,5 +29,5 @@ public class Product extends BaseEntity{
     private String description;
 
     @Column(name="in_stock")
-    private Boolean in_stock;
+    private Boolean inStock; // без подчерков в имени
 }
