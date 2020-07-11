@@ -12,5 +12,5 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long>{
-    List<Product> findByProductIn_stock(Boolean in_stock);
+    List<Product> findProductByInStock(Boolean in_stock); // в прежнем наименовании метода не сработает
 }

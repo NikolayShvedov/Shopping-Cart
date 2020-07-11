@@ -17,6 +17,6 @@ public class ProductServiceImpl {
     private ProductRepository productRepository;
 
     public List<Product> getOrdersByIn_stock(Boolean in_stock){
-        return productRepository.findByProductIn_stock(in_stock);
+        return productRepository.findProductByInStock(in_stock);
     }
 }

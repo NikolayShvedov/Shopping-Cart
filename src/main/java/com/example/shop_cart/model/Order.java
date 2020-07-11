@@ -13,33 +13,31 @@ public class Order {
 
     public Order() {}
 
-    public Order(String order_date, Set<OrderStatus> order_status, Set<PaymentMethod> payment_method) {
+    public Order(String order_date, OrderStatus order_status, PaymentMethod payment_method) {
         this.order_date = order_date;
         this.order_status = order_status;
         this.payment_method = payment_method;
     }
 
-    public Order(Long id, String order_date, Set<OrderStatus> order_status, Set<PaymentMethod> payment_method) {
+    public Order(Long id, String order_date, OrderStatus order_status, PaymentMethod payment_method) {
         this(order_date, order_status, payment_method);
         this.id = id;
     }
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY) // иначе ошибка на отсутствие hibernate_sequence во время вставки
     private Long id;
 
     @Column(name="order_date")
-    private String order_date;
+    private String order_date; //почему строка а не java.util.Date ?
 
-    @ElementCollection(targetClass = OrderStatus.class, fetch = FetchType.EAGER)
-    @Column(name="order_status")
     @Enumerated(EnumType.STRING)
-    private Set<OrderStatus> order_status;
+    private OrderStatus order_status; // здесь не набор статусов, а один из них
 
-    @ElementCollection(targetClass = PaymentMethod.class, fetch = FetchType.EAGER)
-    @Column(name="payment_method")
     @Enumerated(EnumType.STRING)
-    private Set<PaymentMethod> payment_method;
+    private PaymentMethod payment_method; // здесь не набор, а один из
+
+    //todo где ссылка на Customer ?
 
     public Long getId() {
         return id;
@@ -57,19 +55,19 @@ public class Order {
         this.order_date = order_date;
     }
 
-    public Set<OrderStatus> getOrder_status() {
+    public OrderStatus getOrder_status() {
         return order_status;
     }
 
-    public void setOrder_status(Set<OrderStatus> order_status) {
+    public void setOrder_status(OrderStatus order_status) {
         this.order_status = order_status;
     }
 
-    public Set<PaymentMethod> getPayment_method() {
+    public PaymentMethod getPayment_method() {
         return payment_method;
     }
 
-    public void setPayment_method(Set<PaymentMethod> payment_method) {
+    public void setPayment_method(PaymentMethod payment_method) {
         this.payment_method = payment_method;
     }
 }
