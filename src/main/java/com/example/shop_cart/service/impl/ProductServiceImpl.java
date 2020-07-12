@@ -16,7 +16,11 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+<<<<<<< HEAD
     public List<Product> getOrdersByIn_stock(Boolean in_stock) {
+=======
+    public List<Product> getOrdersByIn_stock(Boolean in_stock){
+>>>>>>> 2138dcdd8144f446734598a6b716d955b0e5d1f2
         return productRepository.findProductByInStock(in_stock);
     }
 }

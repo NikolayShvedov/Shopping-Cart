@@ -27,6 +27,7 @@ public class Order {
     }
 
     @Id
+<<<<<<< HEAD
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
@@ -44,6 +45,21 @@ public class Order {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", referencedColumnName = "id", updatable = false)
     private Customer customer;
+=======
+    @GeneratedValue(strategy=GenerationType.IDENTITY) // иначе ошибка на отсутствие hibernate_sequence во время вставки
+    private Long id;
+
+    @Column(name="order_date")
+    private String order_date; //почему строка а не java.util.Date ?
+
+    @Enumerated(EnumType.STRING)
+    private OrderStatus order_status; // здесь не набор статусов, а один из них
+
+    @Enumerated(EnumType.STRING)
+    private PaymentMethod payment_method; // здесь не набор, а один из
+
+    //todo где ссылка на Customer ?
+>>>>>>> 2138dcdd8144f446734598a6b716d955b0e5d1f2
 
     public Long getId() {
         return id;

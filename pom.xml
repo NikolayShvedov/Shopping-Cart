@@ -54,7 +54,24 @@
             <scope>provided</scope>
         </dependency>
 
+<<<<<<< HEAD
         <!-- Java XML Bind -->
+=======
+        <!--ошибка ненайденного entityManagerFactory была из-за этого-->
+
+        <!-- Hibernate -->
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-core</artifactId>-->
+            <!--<version>4.1.4.Final</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-entitymanager</artifactId>-->
+            <!--<version>5.2.3.Final</version>-->
+        <!--</dependency>-->
+>>>>>>> 2138dcdd8144f446734598a6b716d955b0e5d1f2
 
         <dependency>
             <groupId>javax.xml.bind</groupId>

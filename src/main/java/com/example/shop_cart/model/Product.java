@@ -28,6 +28,11 @@ public class Product extends BaseEntity{
     @Column(name="description", nullable = false)
     private String description;
 
+<<<<<<< HEAD
     @Column(name="in_stock", nullable = false)
     private Boolean inStock;;
+=======
+    @Column(name="in_stock")
+    private Boolean inStock; // без подчерков в имени
+>>>>>>> 2138dcdd8144f446734598a6b716d955b0e5d1f2
 }
