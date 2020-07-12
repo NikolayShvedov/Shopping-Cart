@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Simple JavaBean domain object that represents OrderDetail.
@@ -20,23 +17,21 @@ import javax.persistence.Table;
 @ToString
 public class OrderDetail extends BaseEntity{
 
-    @Column(name="price")
+    @Column(name="price", nullable = false)
     private Integer price;
 
-    @Column(name="quantity")
+    @Column(name="quantity", nullable = false)
     private Integer quantity;
 
-    @JoinColumn(name = "order_id", updatable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id", referencedColumnName = "id", updatable = false)
     private Order order;
 
-    @JoinColumn(name = "customer_id", updatable = false)
-    private Customer customer;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", referencedColumnName = "id", updatable = false)
+    private Product product;
 
     public Long getOrderId() {
         return order.getId();
-    }
-
-    public Long getCustomerId() {
-        return customer.getId();
     }
 }

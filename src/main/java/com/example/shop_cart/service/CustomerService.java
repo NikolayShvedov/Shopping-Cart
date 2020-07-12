@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Service interface for {@link Customer} class.
  */
+
 public interface CustomerService {
 
 }

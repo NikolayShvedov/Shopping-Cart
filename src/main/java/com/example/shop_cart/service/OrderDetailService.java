@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Service interface for {@link OrderDetail} class.
  */
+
 public interface OrderDetailService {
 
     OrderDetail getById(Long id);

@@ -29,19 +29,19 @@ public class Customer{
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
-    @Column(name="names")
+    @Column(name="names", nullable = false)
     private String name;
 
-    @Column(name="surname")
+    @Column(name="surname", nullable = false)
     private String fio;
 
-    @Column(name="address")
+    @Column(name="address", nullable = false)
     private String address;
 
-    @Column(name="email")
+    @Column(name="email", nullable = false)
     private String email;
 
-    @Column(name="phone")
+    @Column(name="phone", nullable = false)
     private String phone;
 
     public Long getId() {

@@ -42,7 +42,8 @@ public class OrderDetailRestController {
     }
 
     //функция для добавления новой позиции
-    @RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    //@RequestMapping(value = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @PostMapping(value = "post", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<OrderDetail> saveOrderDetail(@RequestBody @Valid OrderDetail orderDetail) {
         HttpHeaders headers = new HttpHeaders();
 

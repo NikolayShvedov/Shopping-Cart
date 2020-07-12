@@ -19,15 +19,15 @@ import javax.persistence.Table;
 @ToString
 public class Product extends BaseEntity{
 
-    @Column(name="names")
+    @Column(name="names", nullable = false)
     private String name;
 
-    @Column(name="price")
+    @Column(name="price", nullable = false)
     private Integer price;
 
-    @Column(name="description")
+    @Column(name="description", nullable = false)
     private String description;
 
-    @Column(name="in_stock")
-    private Boolean in_stock;
+    @Column(name="in_stock", nullable = false)
+    private Boolean inStock;;
 }
