@@ -1,11 +1,11 @@
 # Shopping-Cart
 REST приложение (Shopping Cart) с использованием Spring
 При создании базы данных использовал СУБД PostgreSQL. В БД после запуска приложения должны появиться следующие 4 таблицы:
-Customer (id, names, fio, address, email, phone) - Покупатель
+Customer (id, names, fio, address, email, phone) - Покупатель.
 Order (id, order_date, order_status, payment_method, customer_id) – Заказ (customer_id – ссылка на покупателя; 
 order_status – принимает одно из created, processing, cancelled, shipped; payment_method – принимает одно из CREDIT_CARD, PAY_PAL, ON_RECEIPT).
-Product (id, names, price, description, inStock) – Товар (inStock – логическое поле, есть ли товар в продаже)
-OrderDetail (id, order_id, product_id, price, quantity)
+Product (id, names, price, description, inStock) – Товар (inStock – логическое поле, есть ли товар в продаже).
+OrderDetail (id, order_id, product_id, price, quantity).
 
 В пакете model создать entity для всех таблиц
 Работа с БД должна быть организована через спринговый JpaRepository (пакет repository). Jpa-реализация - hibernate
