@@ -2,19 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="shopping_cart" />
-        <module name="my_app" />
+        <module name="Shopping Cart" />
+        <module name="ShoppingCart-master" />
       </profile>
     </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="my_app" options="-parameters" />
-      <module name="shopping_cart" options="-parameters" />
-    </option>
   </component>
 </project>
